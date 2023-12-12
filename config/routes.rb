@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    registrations: 'custom_registrations'
+  }
   resources :posts
   root 'pages#home'
+  get 'admin_panel' => 'pages#admin_panel', as: :admin_panel
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

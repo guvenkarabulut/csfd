@@ -1,7 +1,7 @@
 <nav id="header" class="w-full z-30 top-0 text-white bg-[#4343bf] shadow-md sticky">
   <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
     <div class="pl-4 flex items-center">
-      <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+      <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="<%= root_path %>">
         <!--Icon from: http://www.potlabicons.com/ -->
         <svg class="fill-current inline" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 100 100">
             <rect width="58" height="41" x="20" y="38" fill="#4b4dff"></rect><path fill="#4343bf" d="M81,82H17V35h64V82z M23,76h52V41H23V76z"></path><path fill="#ff8405" d="M70,35H60v-3c0-6.065-4.935-11-11-11s-11,4.935-11,11v3H28v-3c0-11.579,9.421-21,21-21 s21,9.421,21,21V35z"></path><rect width="4" height="17" x="47" y="50" fill="#edf7f5"></rect><polygon fill="#3abcf8" points="85,86 23,86 23,76 75,76 75,41 85,41"></polygon>
@@ -20,13 +20,7 @@
     <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
-          <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="#">Active</a>
-        </li>
-        <li class="mr-3">
-          <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
-        </li>
-        <li class="mr-3">
-          <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+          <%= link_to "Blogs", posts_path, class:"inline-block py-2 px-4 text-white font-bold no-underline" %>
         </li>
       </ul>
       <button
