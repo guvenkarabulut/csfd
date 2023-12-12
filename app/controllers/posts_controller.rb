@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user_role_is_admin!, except: %i[index show]
 
   # GET /posts or /posts.json
   def index
@@ -58,13 +59,18 @@ class PostsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def post_params
     params.require(:post).permit(:title, :content, :image, :summary)
+  end
+
+  def authenticate_user_role_is_admin!
+    return if current_user.present? && current_user.role == 'admin'
+
+    flash[:alert] = 'You are not authorized to access this page.'
+    redirect_to root_path
   end
 end

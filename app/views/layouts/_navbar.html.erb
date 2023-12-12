@@ -16,18 +16,7 @@
         <li class="mr-3">
           <%= link_to "Blogs", posts_path, class:"inline-block py-2 px-4 text-white font-bold no-underline" %>
         </li>
-        <% if current_user.present? %>
-          <li>
-            sea
-          </li>
-        <% else %>
-        <li class="mr-3">
-          <%= link_to "Sign in", new_user_session_path, class:"inline-block py-2 px-4 text-white font-bold no-underline" %>
-        </li>
-        <li class="mr-3">
-          <%= button_to "Sign up", new_user_registration_path, method: :get, class:"mx-auto lg:mx-0 hover:underline bg-white text-[#4b4dff] font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" %>
-        </li>
-        <% end %>
+        <%= render 'layouts/session_management' %>
       </ul>
 
     </div>

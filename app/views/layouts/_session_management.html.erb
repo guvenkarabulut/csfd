@@ -1,0 +1,28 @@
+<% if current_user.present? %>
+   <li>
+  <div class="relative inline-block text-left" data-controller="dropdown">
+  <div>
+    <button type="button" data-action="click->dropdown#toggleMenu" class="inline-flex w-full justify-center rounded-full w-12 h-12 bg-white text-sm font-semibold text-gray-900 shadow-sm ring-2 ring-[#ff8405] hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+      <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" class="rounded-full w-12 h-12" alt="">
+    </button>
+  </div>
+   <div data-target="dropdown.menu" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+     <div class="py-1" role="none">
+       <%= link_to "Edit", edit_user_registration_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+      
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"text-gray-700 block w-full text-left px-4 py-2 text-sm", tabindex:"-1", id:"menu-item-3" %>
+    </div>
+   </div>
+  </li>
+</div>
+  <% else %>
+  <li class="mr-3">
+    <%= link_to "Sign in", new_user_session_path, class:"inline-block py-2 px-4 text-white font-bold no-underline" %>
+  </li>
+  <li class="mr-3">
+    <%= button_to "Sign up", new_user_registration_path, method: :get, class:"mx-auto lg:mx-0 hover:underline bg-white text-[#4b4dff] font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" %>
+  </li>
+<% end %>
+

@@ -1,11 +1,10 @@
-<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
  <div class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center items-center">
     <%= render 'layouts/csfd_svg' %>
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up</h2>
   </div>
 
 
@@ -35,20 +34,16 @@
         </div>
       </div>
 
-      <div>
+      <div class="mt-2">
         <%= f.submit "Sign up", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
       </div>
     </form>
 
     <p class="mt-10 text-center text-sm text-gray-500">
-      Not a member?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+    You have an account?
+      <%= link_to "Log in", new_user_session_path, class: "font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" %>
     </p>
   </div>
 </div>
-
-
 <% end %>
 
-
-<%= render "devise/shared/links" %>
