@@ -6,7 +6,7 @@
 ![badge](https://img.shields.io/badge/Bootstrap-8c1f28.svg?style=for-the-badge&logo=Bootstrap&logoColor=8c1f28&labelColor=F2F2F2)
 
 ## TODO
-- [ ] Create new model for blog posts
+- [x] Create new model for blog posts
 - [ ] Change UI (maybe like hacktoberfest)
 - [ ] İmplement search logic for blog posts(maybe with elasticsearch)
 - [ ] Add pagination for blog posts
