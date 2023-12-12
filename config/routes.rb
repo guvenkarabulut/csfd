@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
-    registrations: 'custom_registrations'
-  }
+  devise_for :users
   resources :posts
   root 'pages#home'
   get 'admin_panel' => 'pages#admin_panel', as: :admin_panel
