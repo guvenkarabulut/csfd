@@ -2,9 +2,14 @@
     <div class="container mx-auto my-5 p-5">
       <div class="md:flex no-wrap md:-mx-2 ">
         <div class="w-full md:w-3/12 md:mx-2">
-          <div class="bg-white p-3 border-t-4 border-green-400">
-            <div class="image overflow-hidden ">
-              <%= image_tag url_for(current_user.avatar), class:'h-auto w-20 border-2 border-green-400 rounded-md' %>
+          <div class="bg-white p-3 border-t-4 border-[#4343bf]">
+            <div class="relative">
+            <div>
+              <%= image_tag url_for(current_user.avatar), class:'h-auto w-20 border-2 border-[#4343bf] rounded-md' %>
+            </div>
+            <div class="absolute -top-2 left-16 bg-[#4343bf] rounded-full text-white w-6 h-6 text-center hover:bg-gray-100 hover:text-[#4343bf]">
+              <button data-action="click->edit-toggle#toggle" class="fa fa-edit cursor-pointer"></button>
+            </div>
             </div>
             <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><%= current_user.first_name %> <%= current_user.last_name %></h1>
             <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>

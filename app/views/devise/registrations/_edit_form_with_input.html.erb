@@ -16,6 +16,12 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "px-4 py-2 rounded" %>
       </div>
     </div>
+    <div class="grid grid-cols-2">
+      <div class="px-4 py-2 font-semibold">Avatar</div>
+      <div class="py-2">
+        <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: "px-4 py-2 rounded" %>
+      </div>
+    </div>
   </div>
    <div>
       <div class="px-4 py-2 font-semibold">Current Password<span class="text-gray-700 text-xs italic">

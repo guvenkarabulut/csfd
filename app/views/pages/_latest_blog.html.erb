@@ -49,7 +49,7 @@
           class: "w-full sm:w-1/2  bg-[#4b4dff] shadow-md no-underline hover:bg-[#4343bf] text-white font-bold py-3 px-6 rounded-lg"
         %>
           <div class="flex justify-between items-center">
-            <% @user = User.find(@posts.first.user_id) %>
+            <% @user = User.find(@posts.last.user_id) %>
             <span class="text-xs text-gray-600"><%= @posts.last.created_at.strftime("%B %d, %Y") %></span>
         <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
         </div>
