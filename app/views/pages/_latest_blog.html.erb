@@ -15,10 +15,17 @@
         <p class="text-gray-600 mb-8">
           <%= @posts.first.summary %> 
         </p>
+        <div class="flex justify-between ">
         <%= link_to "Read More",
           post_path(@posts.first),
-          class: "w-full sm:w-1/2 p-6 mt-6 bg-[#4b4dff] shadow-md no-underline hover:bg-[#4343bf] text-white font-bold py-3 px-6 rounded-lg"
+          class: "w-full sm:w-1/2  bg-[#4b4dff] shadow-md no-underline hover:bg-[#4343bf] text-white font-bold py-3 px-6 rounded-lg"
         %>
+      <div class="flex justify-between items-center">
+        <% @user = User.find(@posts.first.user_id) %>
+        <span class="text-xs text-gray-600"><%= @posts.last.created_at.strftime("%B %d, %Y") %></span>
+        <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
+        </div>
+        </div>
       </div>
       <div class="w-full sm:w-1/2 p-6">
         <%= image_tag url_for(@posts.first.image), class: "w-full sm:h-64 mx-auto" %>
@@ -36,16 +43,23 @@
           <p class="text-gray-600 mb-8">
             <%= @posts.last.summary %> 
           </p>
+          <div class="flex justify-between">
           <%= link_to "Read More",
           post_path(@posts.last),
-          class: "w-full sm:w-1/2 p-6 mt-6 bg-[#4b4dff] shadow-md no-underline hover:bg-[#4343bf] text-white font-bold py-3 px-6 rounded-lg"
+          class: "w-full sm:w-1/2  bg-[#4b4dff] shadow-md no-underline hover:bg-[#4343bf] text-white font-bold py-3 px-6 rounded-lg"
         %>
+          <div class="flex justify-between items-center">
+            <% @user = User.find(@posts.first.user_id) %>
+            <span class="text-xs text-gray-600"><%= @posts.last.created_at.strftime("%B %d, %Y") %></span>
+        <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
         </div>
+
+          </div>
+          </div>
       </div>
     </div>
     <% else %>
       <p class="text-center">No posts yet</p>
-
     <% end %>
   </div>
 </section>

@@ -3,9 +3,8 @@
       <div class="md:flex no-wrap md:-mx-2 ">
         <div class="w-full md:w-3/12 md:mx-2">
           <div class="bg-white p-3 border-t-4 border-green-400">
-            <div class="image overflow-hidden">
-              <img class="h-auto w-full mx-auto"
-                src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg" alt="">
+            <div class="image overflow-hidden ">
+              <%= image_tag url_for(current_user.avatar), class:'h-auto w-20 border-2 border-green-400 rounded-md' %>
             </div>
             <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><%= current_user.first_name %> <%= current_user.last_name %></h1>
             <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>

@@ -3,7 +3,7 @@
   <div class="relative inline-block text-left" data-controller="dropdown">
   <div>
     <button type="button" data-action="click->dropdown#toggleMenu" class="inline-flex w-full justify-center rounded-full w-12 h-12 bg-white text-sm font-semibold text-gray-900 shadow-sm ring-2 ring-[#ff8405] hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-      <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" class="rounded-full w-12 h-12" alt="">
+      <%= image_tag url_for(current_user.avatar), class:"rounded-full w-12 h-12" %>
     </button>
   </div>
    <div data-target="dropdown.menu" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
