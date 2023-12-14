@@ -8,10 +8,13 @@
   </div>
    <div data-target="dropdown.menu" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
      <div class="py-1" role="none">
-       <%= link_to "Edit", edit_user_registration_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
+       <%= link_to "Profile", edit_user_registration_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
     <% if current_user.role == "reader" %>  
       <%=  link_to "Posts", posts_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
     <% elsif current_user.role == "writer" %>
+      <%= link_to "Posts", posts_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
+      <%= link_to "Panel", panel_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
+    <% elsif current_user.role == "admin" %>  
       <%= link_to "Posts", posts_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
       <%= link_to "Panel", panel_path, class:"text-gray-700 block px-4 py-2 text-sm" %>
     <% end %>

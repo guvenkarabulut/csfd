@@ -1,9 +1,58 @@
-<%= link_to "add post", new_post_path %>
-
-<% @posts.each do |post| %>
-  <div class="post">
-    <h2><%= link_to post.title, post_path(post) %></h2>
-    <p><%= post.content %></p>
+<div class=" min-h-screen">
+  <div class="flex justify-between items-center mb-4 px-4 py-2 bg-white rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold">Posts</h1>
+  <%= link_to "Create Post", new_post_path, class: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded" %>
+</div>
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right">
+        <thead class="text-xs text-white uppercase bg-[#4343bf]">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                   Summary 
+                </th>
+                <th scope="col" class="px-6 pr-3">
+                   Actions 
+                </th>
+              </tr>
+        </thead>
+        <tbody>
+          <% if @posts.empty? %>
+            <tr class="bg-white border-b">
+                <th scope="row" class="px-6 py-4 font-medium">
+                    No Posts Found
+                </th>
+                <td class="px-6 py-4">
+                    No Posts Found
+                </td>
+                <td class="px-6 py-4 flex">
+                    No Posts Found
+                </td>
+            </tr>
+          <% else %>
+          <% @posts.each do |post| %>
+            <tr class="bg-white border-b">
+                <th scope="row" class="px-6 py-4 font-medium">
+                    <%= post.title %>
+                </th>
+                <td class="px-6 py-4">
+                    <%= post.summary %>
+                </td>
+                <td class="px-6 py-4 flex">
+                    <%= link_to 'Show', post_path(post), class: "mr-2 text-blue-600 hover:text-blue-900 bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded" %>
+                    <%= link_to 'Edit', edit_post_path(post), class: "mr-2 text-green-600 hover:text-green-900 bg-green-100 hover:bg-green-200 px-2 py-1 rounded" %>
+                    <%= button_to 'Destroy', post_path(post),
+                          method: :delete,
+                          class: "mr-2 text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 py-1 rounded",
+                          data: { confirm: 'Are you sure?' }
+                    %>
+                </td>
+            </tr>
+          <% end %>
+          <% end %>
+        </tbody>
+    </table>
   </div>
-<% end %>
-
+</div>
