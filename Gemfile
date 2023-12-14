@@ -71,3 +71,6 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "devise", "~> 4.9"
+
+gem "searchkick", "~> 5.3"
+gem "elasticsearch", "~> 8.11"
