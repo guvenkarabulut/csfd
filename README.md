@@ -9,7 +9,7 @@
 - [x] Create new model for blog posts
 - [ ] Change UI (maybe like hacktoberfest)
 - [x] İmplement search logic for blog posts(maybe with elasticsearch)
-- [ ] Add pagination for blog posts
+- [x] Add pagination for blog posts
 - [ ] Add comments for blog posts
 - [ ] Add like/dislike for blog posts
 - [ ] Add tags for blog posts

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post_with_author, only: %i[edit]
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.paginate(page: params[:page], per_page: 2).order('created_at DESC')
   end
 
   # GET /posts/1 or /posts/1.json
