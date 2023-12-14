@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :posts
   root 'pages#home'
+  devise_for :users
+
+  resources :posts do
+    resources :comments
+  end
+
   get 'panel' => 'pages#panel', as: :panel
   get 'search', to: 'search#search'
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

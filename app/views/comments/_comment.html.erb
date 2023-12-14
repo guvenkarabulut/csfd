@@ -1,0 +1,17 @@
+<% @user = User.find(comment.user_id) %>
+<div class="relative grid grid-cols-1 gap-4 p-4 mb-8 border rounded-lg bg-white shadow-lg w-full ">
+    <div class="relative flex gap-4">
+        <img src="<%= url_for(@user.avatar) %>" class="relative rounded-lg -top-8 -mb-4 bg-white border h-20 w-20" alt="" loading="lazy">
+        <div class="flex flex-col w-full">
+            <div class="flex flex-row justify-between">
+                <p class="relative text-xl whitespace-nowrap truncate overflow-hidden"><%= @user.first_name %></p>
+                <% if current_user.present? && current_user.id == @user.id %>
+                    <%= button_to '', [post, comment], method: :delete, class: "fa-solid fa-trash text-gray-500 text-xl" %>
+                <% end %>
+            </div>
+            <p class="text-gray-400 text-sm"><%= comment.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+    </div>
+    <p class="-mt-4 text-gray-500"><%= comment.body %></p>
+</div>
+

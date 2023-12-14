@@ -1,3 +1,21 @@
 <div>
-    <%= render @post %>
+    <div class="relative">
+        <%= render @post %>
+        <% @comments.each do |comment| %>
+            <%= render 'comments/comment', comment: comment, post: @post %>
+        <% end %>
+        <div class="flex justify-center digg_pagination items-center p-4 rounded-b-lg">
+               <%#  TODO: Add pagination for search results %>
+                <%= will_paginate @comments, page_links: true %>
+        </div>
+        <% if current_user.present? %>
+        <div class="absolute top-0 -right-[90px]">
+            <%= render 'comments/form', post: @post %>
+        </div>
+        <% else %>
+            <div class="bg-gray-100 min-w-[10vw] max-w-[10vw] rounded-lg h-20 mt-4 flex flex-col justify-center absolute top-0 right-20">
+                <p class="text-center">You need to <span class="text-[#4343bf] text-lg"><%= link_to 'sign in', new_user_session_path %></span> or  <span class="text-[#4343bf] text-lg"><%= link_to 'sign up', new_user_registration_path %></span> to comment</p>
+            </div>
+        <% end %>
+    </div>
 </div>

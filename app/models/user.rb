@@ -7,6 +7,7 @@ class User < ApplicationRecord
   enum role: %i[reader writer admin]
   has_one_attached :avatar
   after_create :attach_default_avatar
+  has_many :comments, dependent: :destroy
 
   private
 
