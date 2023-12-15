@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
   devise_for :users
+  get '/u/:id', to: 'users#profile', as: 'user'
 
   resources :posts do
     resources :comments

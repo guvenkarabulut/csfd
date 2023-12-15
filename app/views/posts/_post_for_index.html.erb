@@ -3,10 +3,13 @@
   <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
     <span class="font-semibold title-font text-gray-700">CATEGORY</span>
     <span class="mt-1 text-gray-500 text-sm"><%= post.created_at.strftime("%B %d, %Y") %></span>
+  
     <%= image_tag url_for(post.image), class: "h-32 rounded w-32 object-cover object-center mb-4" %> 
 <div class="flex justify-center">
-    <span class="mt-1 text-gray-500 text-sm">By <%= @user.first_name %></span>
+  <span class="mt-1 text-gray-500 text-sm">By <%= @user.first_name %></span>
+  <a href="<%= user_path(@user) %>">
     <%= image_tag url_for(@user.avatar), class: "h-10 w-10 rounded-full object-cover object-center" %>
+  </a>
 </div>
 </div>
   <div class="md:flex-grow">

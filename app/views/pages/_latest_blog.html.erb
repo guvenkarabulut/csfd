@@ -23,7 +23,9 @@
       <div class="flex justify-between items-center">
         <% @user = User.find(@posts.first.user_id) %>
         <span class="text-xs text-gray-600"><%= @posts.last.created_at.strftime("%B %d, %Y") %></span>
-        <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
+        <a href="<%= user_path(@user) %>">
+          <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
+        </a>
         </div>
         </div>
       </div>
@@ -51,7 +53,9 @@
           <div class="flex justify-between items-center">
             <% @user = User.find(@posts.last.user_id) %>
             <span class="text-xs text-gray-600"><%= @posts.last.created_at.strftime("%B %d, %Y") %></span>
-        <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
+        <a href="<%= user_path(@user) %>">
+          <%=  image_tag @user.avatar, class: "w-10 h-10 rounded-full mr-4 bg-gray-100 border-2 border-gray-300" %>
+        </a>
         </div>
 
           </div>
