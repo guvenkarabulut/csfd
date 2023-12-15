@@ -9,15 +9,19 @@
 
 ## TODO
 - [x] Create new model for blog posts
-- [ ] Change UI (maybe like hacktoberfest)
 - [x] İmplement search logic for blog posts(maybe with elasticsearch)
 - [x] Add pagination for blog posts
-- [x] Add comments for blog posts
+- [x] Add comments for blog posts TODO: Edit
+- [ ] Profile page for users
 - [ ] Add like/dislike for blog posts
 - [ ] Add tags for blog posts
 - [ ] Add filter for blog posts (like tags)
 - [ ] Add mail notification for new blog posts
+- [ ] Add save for post (like instagram)
 - [ ] Add multi language support
 - [ ] Add multi proggraming language support for code blocks
 - [ ] Look active text editor for blog posts(maybe we can modify default editor)
 - [ ] Add contents section for blog posts(like table of contents)
+- [ ] Add paginate size for user
+- [ ] Change UI (maybe like hacktoberfest)
+

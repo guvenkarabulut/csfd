@@ -6,12 +6,23 @@
             <div class="flex flex-row justify-between">
                 <p class="relative text-xl whitespace-nowrap truncate overflow-hidden"><%= @user.first_name %></p>
                 <% if current_user.present? && current_user.id == @user.id %>
+                  <div>
                     <%= button_to '', [post, comment], method: :delete, class: "fa-solid fa-trash text-gray-500 text-xl" %>
+                    <%= link_to '', nil, class: "fa-solid fa-edit text-gray-500 text-xl", remote:true, data: {
+                        controller: "comments",
+                        action: "comments#toggleForm",
+                        comments_form_param: "edit-form-#{comment.id}",
+                        comments_body_param: "comment-body-#{comment.id}"
+                    } %>
+                  </div>
                 <% end %>
             </div>
             <p class="text-gray-400 text-sm"><%= comment.created_at.strftime("%d/%m/%Y") %></p>
         </div>
     </div>
     <p class="-mt-4 text-gray-500"><%= comment.body %></p>
+    <div id="edit-form-<%= comment.id %>" class="hidden">
+        <%= render "comments/form", post: post, comment: comment, submit_label: "Update" %>
+    </div>
 </div>
 
