@@ -2,7 +2,7 @@
     <article class="flex flex-col shadow my-4">
         <%= image_tag url_for(post.image), class: "w-full h-[40vh]" if post.image.attached? %>
         <div class="bg-white flex flex-col justify-start p-6">
-            <h2 href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</h2>
+            <h2 href="#" class="text-blue-700 text-sm font-bold uppercase pb-4"><%= post.tag %></h2>
             <h4 class="text-3xl font-bold hover:text-gray-700 pb-4">
                 <%= post.title %>
             </h4>

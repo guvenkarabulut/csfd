@@ -13,8 +13,8 @@
 - [x] Add pagination for blog posts
 - [x] Add comments for blog posts TODO: Edit
 - [x] Profile page for users
-- [ ] Add tags for blog posts
-- [ ] Add filter for blog posts (like tags)
+- [x] Add tags for blog posts
+- [x] Add filter for blog posts (like tags)
 - [ ] Add mail notification for new blog posts
 - [ ] Add save for post (like instagram)
 - [ ] Add multi proggraming language support for code blocks
