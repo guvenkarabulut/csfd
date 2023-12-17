@@ -1,9 +1,8 @@
 class PostNotifierMailer < ApplicationMailer
-  def new_post(post, user)
-    @post = post
-    mail(to: user,
+  def new_post(_post, user_email)
+    mail(to: user_email,
          subject: 'New post created',
          content_type: 'text/html',
-         body: '<h1>Hi, a new post has been created</h1>')
+         body: render('post_notifier_mailer/new_post', locals: { post: _post }))
   end
 end

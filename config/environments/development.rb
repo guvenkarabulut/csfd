@@ -1,15 +1,14 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
-  congig.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: 'guven-leetcode.herokuapp.com',
-    user_name: 'guven.leetcode@gmail.com',
-    password: 'aqkntknfojnahhhj',
+    domain: 'gmail.com',
+    user_name: Rails.application.credentials.dig(:google_smtp, :email),
+    password: Rails.application.credentials.dig(:google_smtp, :secret_access_key),
     authentication: 'plain',
     enable_starttls_auto: true
   }

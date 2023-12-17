@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'newsletter/create', to: 'newsletter#create', as: 'newsletter_create'
   root 'pages#home'
   devise_for :users
   get '/u/:id', to: 'users#profile', as: 'user'
