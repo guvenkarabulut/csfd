@@ -30,12 +30,16 @@
         </div>
       </div>
       <div class="w-full sm:w-1/2 p-6">
-        <%= image_tag url_for(@posts.first.image), class: "w-full sm:h-64 mx-auto" %>
+        <% if @posts.first.image.present? %>
+          <%= image_tag url_for(@posts.first.image), class: "w-full sm:h-64 mx-auto" %>
+        <% end %>
       </div>
     </div>
     <div class="flex flex-wrap flex-col-reverse sm:flex-row">
       <div class="w-full sm:w-1/2 p-6">
-        <%= image_tag url_for(@posts.last.image), class: "w-full sm:h-64 mx-auto" %>
+        <% if @posts.last.image.present? %>
+          <%= image_tag url_for(@posts.last.image), class: "w-full sm:h-64 mx-auto" %>
+        <% end %>
       </div>
       <div class="w-full sm:w-1/2 p-6 mt-6">
         <div class="align-middle">

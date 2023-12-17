@@ -12,9 +12,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body style="font-family: 'Source Sans Pro', sans-serif;">
+  <body style="font-family: 'Source Sans Pro', sans-serif;", class="bg-vulcan-900">
     <main>
       <%= render 'layouts/navbar' %>
+      <%= render 'layouts/alerts' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </main>
