@@ -1,19 +1,19 @@
 <div class="text-gray-700 w-[60vw]">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <div class="grid md:grid-cols-2 text-sm">
+  <div class="grid md:grid-cols-2 text-sm text-white">
     <div class="grid grid-cols-2">
       <div class="px-4 py-2 font-semibold">First Name</div>
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "px-4 py-2 rounded" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "px-4 py-2 rounded text-black" %>
 
     </div>
     <div class="grid grid-cols-2">
       <div class="px-4 py-2 font-semibold">Last Name</div>
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "px-4 py-2 rounded" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "px-4 py-2 rounded text-black" %>
     </div>
     <div class="grid grid-cols-2">
       <div class="px-4 py-2 font-semibold">Email.</div>
       <div class="py-2">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "px-4 py-2 rounded" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "px-4 py-2 rounded text-black" %>
       </div>
     </div>
     <div class="grid grid-cols-2">
@@ -24,7 +24,7 @@
     </div>
   </div>
    <div>
-      <div class="px-4 py-2 font-semibold">Current Password<span class="text-gray-700 text-xs italic">
+      <div class="px-4 py-2 font-semibold">Current Password<span class=" text-xs italic">
           (password confirmation required for update)
         </span></div>
       <div class="px-4 py-2">

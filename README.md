@@ -15,8 +15,8 @@
 - [x] Profile page for users
 - [x] Add tags for blog posts
 - [x] Add filter for blog posts (like tags)
-- [ ] Add mail notification for new blog posts
- - [ ] test mail notification after deploy
+- [x] Add mail notification for new blog posts
+ - [x] test mail notification after deploy
 - [ ] Add save for post (like instagram)
 - [ ] Add multi proggraming language support for code blocks
 - [ ] Look active text editor for blog posts(maybe we can modify default editor)

@@ -1,36 +1,36 @@
-<div id="<%= dom_id post %>" class="py-8 flex flex-wrap md:flex-nowrap">
-   <% @user = User.find(post.user_id) %>
-   <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-      <% if post.image.present? %>
-         <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="<%= url_for(post.image) %>"alt="">
-      <% end %>
-      <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-         <p class="text-sm text-blue-500 uppercase"><%= post.tag %></p>
-         <a href="#" class="block mt-4 text-2xl font-semibold text-black hover:underline md:text-3xl">
-         <%= post.title %>
-         </a>
-         <p class="mt-3 text-sm text-gray-500  md:text-sm">
-            <%= post.summary %>
-         </p>
-         <a class="text-indigo-500 inline-flex items-center mt-4" href="<%= post_path(post) %>">
+<section class="cta section mt-2" id="<%= dom_id post %>">
+  <% @user = User.find(post.user_id) %>
+  <div class="container flex">
+    <% if post.image.attached? %>
+      <img class="object-cover w-full lg:w-1/2 rounded-xl border-4 border-solid border-blue-400 rounded-lg" src="<%= url_for(post.image) %>" alt="">
+    <% else %>
+      <img class="object-cover w-full lg:w-1/2 rounded-xl border-4 border-solid border-blue-400 rounded-lg" src="https://wallpaperaccess.com/full/1673364.png" alt="">
+    <% end %>
+
+    <div class="cta-inner section-inner">
+      <div class="flex flex-col">
+        <h3 class=""><%= post.title %></h3>
+        <p><%= truncate(post.summary, length: 100) %>...</p>
+        <div class="cta-cta">
+          <a class="text-blue-500 inline-flex items-center" href="<%= post_path(post) %>">
             Learn More
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-               <path d="M5 12h14"></path>
-               <path d="M12 5l7 7-7 7"></path>
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
             </svg>
-         </a>
-         <div class="flex items-center mt-6">
+          </a>
+          <div class="flex items-center aligns-center">
             <a href="<%= user_path(@user) %>">
-            <img class="object-cover object-center w-10 h-10 rounded-full" src="<%= url_for(@user.avatar) %>" alt="">
+              <img class="object-cover object-center w-10 h-10 rounded-full bg-white" src="<%= url_for(@user.avatar) %>" alt="">
             </a>
-            <div class="mx-4">
-              <h1 class="text-sm text-gray-500 italic"><%= @user.first_name %> <%= @user.last_name %></h1>
-                <p class="text-sm text-gray-500"><span class="tex-xs">Created at.</span><%= post.created_at.strftime("%B %d, %Y") %></p>
+            <div class="">
+              <h1 class="text-sm text-gray-500 italic"><%= @user.first_name %></h1>
+              <p class="text-sm text-gray-500"><%= post.created_at.strftime("%B %d, %Y") %></p>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-   </div>
-</div>
+    </div>
+  </div>
+</section>
 
-
-       

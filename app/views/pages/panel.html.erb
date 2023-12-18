@@ -1,5 +1,5 @@
 <div class=" min-h-screen">
-  <div class="flex justify-between items-center mb-4 px-4 py-2 bg-white rounded-lg shadow-md">
+  <div class="flex justify-between items-center mb-4 px-4 py-2 rounded-lg shadow-md">
   <h1 class="text-2xl font-bold">Posts</h1>
   <%= link_to "Create Post", new_post_path, class: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded" %>
 </div>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
           <% if @posts.empty? %>
-            <tr class="bg-white border-b">
+            <tr class="border-b">
                 <th scope="row" class="px-6 py-4 font-medium">
                     No Posts Found
                 </th>
@@ -33,7 +33,7 @@
             </tr>
           <% else %>
           <% @posts.each do |post| %>
-            <tr class="bg-white border-b">
+            <tr class=" text-white border-b">
                 <th scope="row" class="px-6 py-4 font-medium">
                     <%= post.title %>
                 </th>
