@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: csfd_production
   username: csfd
   password: <%= ENV["CSFD_DATABASE_PASSWORD"] %>
