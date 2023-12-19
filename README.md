@@ -17,10 +17,10 @@
 - [x] Add filter for blog posts (like tags)
 - [x] Add mail notification for new blog posts
  - [x] test mail notification after deploy
+ - [ ] make multi thread for mail notification
 - [ ] Add save for post (like instagram)
 - [ ] Add multi proggraming language support for code blocks
 - [ ] Look active text editor for blog posts(maybe we can modify default editor)
 - [ ] Add contents section for blog posts(like table of contents)
-- [ ] Add paginate size for blog posts this can be change in settings
-- [ ] Change UI (maybe like hacktoberfest)
+- [x] Change UI (maybe like hacktoberfest)
 

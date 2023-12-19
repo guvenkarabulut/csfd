@@ -1,3 +1,7 @@
 <% posts.each do |post| %>
   <%= render 'posts/post_for_index', post: post %>
 <% end %>
+<div class="flex justify-center digg_pagination mt-2">
+   <%#  TODO: Add pagination for search results %>
+   <%= will_paginate posts, page_links: true %>
+</div>

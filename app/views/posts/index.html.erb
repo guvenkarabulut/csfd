@@ -16,20 +16,16 @@
                         </div>
                         <% end %>
                      </div>
-                     <div class="flex gap-5 m-2">
+                     <div class="flex m-2 flex-wrap justify-center aligns-center">
                         <%= form_with url: search_with_tag_path, method: :get do |form| %>
                         <%  Post.tags.keys.each do |tag| %>
-                        <%= form.submit tag, class: "p-2 text-[#4343bf] bg-white rounded-md hover:bg-gray-100 hover:text-white uppercase" %>
-                        <% end %>
+                           <%= form.submit tag, class: "text-[#4343bf] bg-white rounded-md hover:bg-gray-100 hover:text-white uppercase w-1/4 p-4 mt-2" %>
+                           <% end %>
                         <% end %>
                      </div>
                   </div>
                   <div id="posts" class="px-12">
                      <%= render 'posts/posts', posts: @posts %>
-                     <div class="flex justify-center digg_pagination ">
-                        <%#  TODO: Add pagination for search results %>
-                        <%= will_paginate @posts, page_links: true %>
-                     </div>
                   </div>
                </div>
             </div>

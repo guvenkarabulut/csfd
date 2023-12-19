@@ -9,6 +9,9 @@
 
     <div class="cta-inner section-inner">
       <div class="flex flex-col">
+        <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-green-600/20 w-1/4 text-center aligns-center justify-center">
+          <%= post.tag %>
+        </span>
         <h3 class=""><%= post.title %></h3>
         <p><%= truncate(post.summary, length: 100) %>...</p>
         <div class="cta-cta">
@@ -19,15 +22,15 @@
               <path d="M12 5l7 7-7 7"></path>
             </svg>
           </a>
-          <div class="flex items-center aligns-center">
-            <a href="<%= user_path(@user) %>">
-              <img class="object-cover object-center w-10 h-10 rounded-full bg-white" src="<%= url_for(@user.avatar) %>" alt="">
-            </a>
-            <div class="">
-              <h1 class="text-sm text-gray-500 italic"><%= @user.first_name %></h1>
-              <p class="text-sm text-gray-500"><%= post.created_at.strftime("%B %d, %Y") %></p>
+          
+          <div class="testimonial-item-footer text-xs  flex justify-center items-center">
+              <a href="<%= user_path(@user) %>">
+
+                <%= image_tag url_for(@user.avatar), class: "avatar avatar-small mr-2  w-12 h-12 bg-white rounded-full" %>
+              </a>
+              <span class="text-white mr-2"><%= @user.first_name %> <%= @user.last_name %></span>
+              <%= post.created_at.strftime("%B %d, %Y") %>
             </div>
-          </div>
         </div>
       </div>
     </div>

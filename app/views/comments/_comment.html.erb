@@ -1,14 +1,14 @@
 <% @user = User.find(comment.user_id) %>
-<div class="relative grid grid-cols-1 gap-4 p-4 mb-8 border rounded-lg bg-white shadow-lg w-full ">
+<div class="relative grid grid-cols-1 gap-4 p-4 mb-8 border rounded-lg bg-gray-500 shadow-lg w-full ">
     <div class="relative flex gap-4">
         <img src="<%= url_for(@user.avatar) %>" class="relative rounded-lg -top-8 -mb-4 bg-white border h-20 w-20" alt="" loading="lazy">
         <div class="flex flex-col w-full">
             <div class="flex flex-row justify-between">
-                <p class="relative text-xl whitespace-nowrap truncate overflow-hidden"><%= @user.first_name %></p>
+                <p class="relative text-xl text-white whitespace-nowrap truncate overflow-hidden"><%= @user.first_name %> <%= @user.last_name %></p>
                 <% if current_user.present? && current_user.id == @user.id %>
                   <div>
-                    <%= button_to '', [post, comment], method: :delete, class: "fa-solid fa-trash text-gray-500 text-xl" %>
-                    <%= link_to '', nil, class: "fa-solid fa-edit text-gray-500 text-xl", remote:true, data: {
+                    <%= button_to '', [post, comment], method: :delete, class: "fa-solid fa-trash text-white text-xl" %>
+                    <%= link_to '', nil, class: "fa-solid fa-edit text-white text-xl", remote:true, data: {
                         controller: "comments",
                         action: "comments#toggleForm",
                         comments_form_param: "edit-form-#{comment.id}",
@@ -17,10 +17,10 @@
                   </div>
                 <% end %>
             </div>
-            <p class="text-gray-400 text-sm"><%= comment.created_at.strftime("%d/%m/%Y") %></p>
+            <p class="text-white text-sm"><%= comment.created_at.strftime("%d/%m/%Y") %></p>
         </div>
     </div>
-    <p class="-mt-4 text-gray-500"><%= comment.body %></p>
+    <p class="-mt-4 text-white"><%= comment.body %></p>
     <div id="edit-form-<%= comment.id %>" class="hidden">
         <%= render "comments/form", post: post, comment: comment, submit_label: "Update" %>
     </div>

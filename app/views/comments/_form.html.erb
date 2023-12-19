@@ -1,5 +1,5 @@
 <%= form_with(model: [post, comment]) do |form| %>
-  <div class="w-1/2 mx-auto">
+  <div class="w-1/2 mx-auto bg-white m-5 p-5">
   <%= form.rich_text_area :body, class: "border border-gray-300 rounded p-2" %>
   <%= form.submit "Send", class: " mt-2 p-2 border border-gray-300 rounded bg-[#4343bf] text-white hover:bg-[#3a3abf] hover:border-[#3a3abf]" %>
   </div>
