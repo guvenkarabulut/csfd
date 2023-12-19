@@ -10,9 +10,9 @@
 #
 # User.create!(email: 'f4223b96-989d-11ee-b9d1-0242ac120002@csfd.com', password: 'beed8333-6ad8-4df4-90aa-97d7692169f8',
 #             role: 2)
-User.create!(email: 'test@reader.com', password: 'test1234', role: 0)
-User.create!(email: 'test@writer.com', password: 'test1234', role: 1)
-User.create!(email: 'test@admin.com', password: 'test1234', role: 2)
+# User.create!(email: 'test@reader.com', password: 'test1234', role: 0)
+# User.create!(email: 'test@writer.com', password: 'test1234', role: 1)
+# User.create!(email: 'test@admin.com', password: 'test1234', role: 2)
 
 # Tag.create!(name: 'XSS')
 # Tag.create!(name: 'SQL Injection')

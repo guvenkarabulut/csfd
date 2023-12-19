@@ -3,6 +3,16 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'https://csfd.fly.dev/',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: Rails.application.credentials.dig(:google_smtp, :email),
+    password: Rails.application.credentials.dig(:google_smtp, :secret_access_key),
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
@@ -21,7 +31,7 @@ Rails.application.configure do
   # config.require_master_key = true
 
   # Disable serving static files from `public/`, relying on NGINX/Apache to do so instead.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
+  config.public_file_server.enabled = false
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
@@ -86,6 +96,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # config.secret_key_base = Rails.application.credentials.dig(:secret_key_base)
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [

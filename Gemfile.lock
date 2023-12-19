@@ -106,27 +106,15 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dockerfile-rails (1.6.0)
+      rails (>= 3.0.0)
     drb (2.2.0)
       ruby2_keywords
-    elastic-transport (8.3.0)
-      faraday (< 3)
-      multi_json
-    elasticsearch (8.11.0)
-      elastic-transport (~> 8.3)
-      elasticsearch-api (= 8.11.0)
-    elasticsearch-api (8.11.0)
-      multi_json
     error_highlight (0.6.0)
     erubi (1.12.0)
-    faraday (2.7.12)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashie (5.0.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -157,7 +145,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
-    multi_json (1.15.0)
     mutex_m (0.2.0)
     net-imap (0.4.7)
       date
@@ -230,9 +217,6 @@ GEM
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    searchkick (5.3.1)
-      activemodel (>= 6.1)
-      hashie
     selenium-webdriver (4.16.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -282,7 +266,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
-  elasticsearch (~> 8.11)
+  dockerfile-rails (>= 1.6)
   error_highlight (>= 0.4.0)
   image_processing (~> 1.2)
   importmap-rails
@@ -290,7 +274,6 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
-  searchkick (~> 5.3)
   selenium-webdriver
   sprockets-rails
   stimulus-rails

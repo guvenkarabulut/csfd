@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   after_create :send_new_post_email
-  searchkick
   has_rich_text :content
   has_one_attached :image
   has_many :comments, dependent: :destroy

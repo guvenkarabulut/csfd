@@ -72,6 +72,6 @@ gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'devise', '~> 4.9'
 
-gem 'elasticsearch', '~> 8.11'
-gem 'searchkick', '~> 5.3'
 gem 'will_paginate', '~> 4.0'
+
+gem 'dockerfile-rails', '>= 1.6', group: :development
